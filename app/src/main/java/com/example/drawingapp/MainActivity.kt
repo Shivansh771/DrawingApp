@@ -27,9 +27,24 @@ class MainActivity : AppCompatActivity() {
     private fun showBrushSizeChooseDialog(){
         val brushDialog= Dialog(this)
         brushDialog.setContentView(R.layout.dialog_brush_size)
+        val smallBtn:ImageButton=brushDialog.findViewById(R.id.ib_small_brush)
+        smallBtn.setOnClickListener{
+            drawingView?.setSizeForBrush(10.toFloat())
+            brushDialog.dismiss()
+        }
+        val mediumBtn:ImageButton=brushDialog.findViewById(R.id.ib_medium_brush)
+        mediumBtn.setOnClickListener{
+            drawingView?.setSizeForBrush(20.toFloat())
+            brushDialog.dismiss()
+        }
+        val largeBtn:ImageButton=brushDialog.findViewById(R.id.imageButton)
+        largeBtn.setOnClickListener{
+            drawingView?.setSizeForBrush(30.toFloat())
+            brushDialog.dismiss()
+        }
+
         brushDialog.setTitle("Brush Size:")
 
         brushDialog.show()
 
-    }
-}
+    }}
